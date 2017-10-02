@@ -47,7 +47,7 @@ def main():
     run_test_reset()
     run_test_steal()
     run_test_get_history()
-#     run_test_combined_box()
+    run_test_combined_box()
 
 
 ########################################################################
@@ -108,6 +108,7 @@ class Box(object):
             self.contents = ''
         self.originalc = self.contents
         self.originalv = self.volume
+        self.a = []
 
 
     def append_string(self, additional_contents):
@@ -368,8 +369,11 @@ class Box(object):
         #    DIFFICULTY:      4
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
+        self.a = self.a + [self.contents]
+
         self.contents = self.originalc
         self.volume = self.originalv
+
 
     def steal(self, other_box):
         """
@@ -436,7 +440,7 @@ class Box(object):
           #   h is now ['GoodGo', 'GoodBye']
         """
         # --------------------------------------------------------------
-        # TODO: 9. Implement and test this function.
+        # DONE: 9. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -444,6 +448,11 @@ class Box(object):
         #    DIFFICULTY:      6
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
+        return self.a
+
+
+
+
 
     def combined_box(self, other_box):
         """
@@ -462,7 +471,7 @@ class Box(object):
           :type other_box: Box
         """
         # --------------------------------------------------------------
-        # TODO: 10. Implement and test this function.
+        # DONE: 10. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -470,6 +479,10 @@ class Box(object):
         #    DIFFICULTY:      4
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
+        a = self.contents + other_box.contents
+        b = self.volume + other_box.volume
+        newbox = Box(a,b)
+        return newbox
 
 
 ########################################################################
