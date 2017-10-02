@@ -30,7 +30,7 @@ import simple_testing as st
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_practice_problem2a()
+    #run_test_practice_problem2a()
     run_test_practice_problem2b()
 
 
@@ -177,6 +177,17 @@ def practice_problem2b(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
+    a = ''
+    for k in range(len(sequence)):
+        b = sequence[k]
+        if len(b[0])==0:
+            pass
+
+        a = a + b[0]
+
+
+    return a
+
 
 
 # ----------------------------------------------------------------------
